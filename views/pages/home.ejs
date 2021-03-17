@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('../layout/header') %>
+        <main>
+            <div class="container">
+                <h2>World Total Statistics</h2>
+                <div class="cardContainer">
+                    <div class="card">
+                        <p> Total Confirmed: <%=data.TotalConfirmed %>
+                        </p>
+                    </div>
+                    <div class="card">
+                        <p> Total Deaths: <%=data.TotalDeaths %>
+                        </p>
+                    </div>
+                    <div class="card">
+                        <p> Total Recovered: <%=data.TotalRecovered %>
+                        </p>
+                    </div>
+                </div>
+                <h3>Get Statistics for specific Country</h3>
+                <form action="/getCountryResult" method="GET">
+                    <input type="text" name="city" placeholder="Country Name">
+                    <input type="date" name="from">
+                    <input type="date" name="to">
+                    <input type="submit" value="SEARCH">
+                </form>
+            </div>
+        </main>
+        <%- include('../layout/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('../layout/header') %>
+        <main>
+            <h2>Covid-19 Statistics For All Countries</h2>
+            <div class="cardContainer">
+                <%if (data.length===0) { %>
+                    <p>NO AVAILABLE RECORDS</p>
+                    <% }else{%>
+                        <% data.forEach(item=>{%>
+                            <div class="card">
+                                <p> Country: <%=item.country %>
+                                </p>
+                                </p>
+                                <p> Date: <%=item.date %>
+                                </p>
+                                <form action="/recordDetails/<%=item.id%>" method="GET">
+                                    <input type="submit" value="View Details">
+                                </form>
+                            </div>
+                            <% }) %>
+                                <% } %>
+            </div>
+        </main>
+        <%- include('../layout/footer') %>
+</body>
+
+</html>

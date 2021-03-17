@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+   
+    <%- include('../layout/header') %>
+        <main>
+            <h2>Covid-19 Statistics For All Countries</h2>
+            <div class="cardContainer">
+                <% data.forEach(item=>{%>
+                    <div class="card">
+                        <p> Country: <%=item.country %>
+                        </p>
+                        <p> Total Confirmed: <%=item.totalconfirmed %>
+                        </p>
+                        <p> Total Deaths: <%=item.totaldeaths %>
+                        </p>
+                        <p> Total Recovered: <%=item.totalrecovered%>
+                        </p>
+                        <p> Date: <%=item.date %>
+                        </p>
+                        <form action="/addRecord" method="POST">
+                            <input type="hidden" name="country" value="<%=item.country %>">
+                            <input type="hidden" name="totalconfirmed" value="<%=item.totalconfirmed %>">
+                            <input type="hidden" name="totaldeaths" value="<%=item.totaldeaths %>">
+                            <input type="hidden" name="totalrecovered" value="<%=item.totalrecovered%>">
+                            <input type="hidden" name="date" value="<%=item.date %>">
+                            <input type="submit" value="add-to-my-records">
+                        </form>
+                    </div>
+                    <% }) %>
+            </div>
+        </main>
+        <%- include('../layout/footer') %>
+</body>
+
+</html>
