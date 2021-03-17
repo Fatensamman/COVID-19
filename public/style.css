@@ -1,0 +1,65 @@
+body{
+    height: 100%;
+    margin: -15px auto;
+}
+header{
+    height: 120px;
+    background-color: rgb(43, 43, 43);
+    color: wheat;
+   
+}
+header h2{
+    margin-top: 20px;
+}
+main{
+    height: auto;
+}
+ul{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-items: center;
+}
+li,a{
+    font-size: 20px;
+    line-height: 100px;
+    text-decoration: none;
+    color: wheat;
+}
+h2, h3{
+    text-align: center;
+}
+.cardContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,250px);
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    grid-gap: 30px;
+}
+.card{
+    display: grid;
+    grid-template-rows: repeat(auto-fit,50px);
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid wheat;
+    background-color: rgb(43, 43, 43);
+    color: wheat;
+    padding: 0px 10px;
+    margin-top: 30px;
+
+}
+footer{
+    height: 100px;
+    text-align: center;
+    background-color: rgb(43, 43, 43);
+    color: wheat;
+}
+footer p{
+    line-height: 100px;
+}
+.mainform{
+    text-align: center;
+}

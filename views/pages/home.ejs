@@ -12,7 +12,7 @@
 <body>
 
     <%- include('../layout/header') %>
-        <main>
+        <main style="height: 400px;">
             <div class="container">
                 <h2>World Total Statistics</h2>
                 <div class="cardContainer">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <h3>Get Statistics for specific Country</h3>
-                <form action="/getCountryResult" method="GET">
+                <form class="mainform" action="/getCountryResult" method="GET">
                     <input type="text" name="city" placeholder="Country Name">
                     <input type="date" name="from">
                     <input type="date" name="to">
